@@ -16,6 +16,19 @@
   --color-brand-700: #0a55b3;
 
   --color-surface: #f4f7fc;
+
+  --animate-fade-up: fade-up 0.8s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 html {

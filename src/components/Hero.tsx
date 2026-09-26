@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowLeft, Cloud, Code2, Database, ShieldCheck } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { images } from "@/data/site";
 import { HeroVisual } from "./HeroVisual";
@@ -90,26 +90,6 @@ export function Hero() {
 
         <div className="relative">
           <HeroVisual />
-          {[
-            { Icon: Code2, pos: "top-0 start-2", d: 0 },
-            { Icon: Cloud, pos: "top-1/3 -start-2", d: 0.6 },
-            { Icon: ShieldCheck, pos: "bottom-6 end-0", d: 1.2 },
-            { Icon: Database, pos: "top-4 end-4", d: 1.8 },
-          ].map(({ Icon, pos, d }, i) => (
-            <motion.div
-              key={i}
-              className={`absolute ${pos} hidden rounded-2xl border border-brand-400/30 bg-navy-800/70 p-3.5 text-brand-300 shadow-lg shadow-brand-500/20 backdrop-blur sm:block`}
-              initial={{ opacity: 0, scale: 0.6 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -12, 0] }}
-              transition={{
-                opacity: { delay: 0.6 + i * 0.1 },
-                scale: { delay: 0.6 + i * 0.1 },
-                y: { duration: 5, repeat: Infinity, delay: d, ease: "easeInOut" },
-              }}
-            >
-              <Icon size={26} strokeWidth={1.6} />
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
