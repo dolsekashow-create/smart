@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
 import { Domains } from "@/components/Domains";
 import { Footer } from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
         <Services />
         <Domains />
         <About />
+        <CTA />
         <Contact />
       </main>
       <Footer />

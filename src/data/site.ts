@@ -19,6 +19,20 @@ export const site = {
   },
 };
 
+// صور Unsplash (مجانية للاستخدام التجاري) — ممكن تستبدلها بصور الشركة الحقيقية
+export function img(id: string, w = 1200) {
+  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+}
+
+export const images = {
+  hero: img("1451187580459-43490279c0fa", 2000),
+  domains: img("1488590528505-98d2b5aba04b", 2000),
+  about: img("1522071820081-009f0129c71c"),
+  aboutSecondary: img("1531482615713-2afd69097998", 800),
+  cta: img("1504384308090-c894fdcc538d", 2000),
+  contact: img("1573164713988-8665fc963095"),
+};
+
 export const navLinks = [
   { href: "#home", label: "الرئيسية" },
   { href: "#services", label: "خدماتنا" },
@@ -79,6 +93,7 @@ export const highlights: { icon: IconName; title: string; text: string }[] = [
 export const services: {
   icon: IconName;
   title: string;
+  image: string;
   en: string;
   text: string;
   points: string[];
@@ -86,6 +101,7 @@ export const services: {
   {
     icon: "code",
     title: "تطوير البرمجيات والتطبيقات",
+    image: img("1461749280684-dccba630e2f6"),
     en: "Software & App Development",
     text: "تحليل وتصميم وتطوير برمجيات مخصصة، مواقع إلكترونية، وتطبيقات جوال وسطح مكتب بمختلف أنواعها.",
     points: ["تحليل المتطلبات والتوصيف", "تطبيقات ويب وجوال", "أنظمة إدارة مخصصة"],
@@ -93,6 +109,7 @@ export const services: {
   {
     icon: "database",
     title: "قواعد البيانات ونظم المعلومات",
+    image: img("1639322537228-f710d846310a"),
     en: "Databases & Information Systems",
     text: "تصميم وبناء قواعد البيانات ونظم المعلومات الإلكترونية وتشغيلها والتدريب عليها.",
     points: ["تصميم ونمذجة البيانات", "نظم معلومات متكاملة", "تشغيل وصيانة"],
@@ -100,6 +117,7 @@ export const services: {
   {
     icon: "cpu",
     title: "النظم المدمجة والإلكترونيات",
+    image: img("1518770660439-4636190af475"),
     en: "Embedded Systems & Hardware",
     text: "تصميم وتطوير الإلكترونيات والنظم المدمجة ونظم الحاسبات ومعداتها، من الفكرة حتى النموذج الأولي.",
     points: ["تصميم الدوائر الإلكترونية", "برمجة المتحكمات", "حلول إنترنت الأشياء"],
@@ -107,6 +125,7 @@ export const services: {
   {
     icon: "server",
     title: "البنية التحتية ومراكز البيانات",
+    image: img("1558494949-ef010cbdcc31"),
     en: "ICT Infrastructure & Data Centers",
     text: "تصميم وتنفيذ وإدارة مشروعات البنية الأساسية للمعلومات والاتصالات ومراكز البيانات.",
     points: ["تجهيز مراكز البيانات", "الخوادم والحوسبة السحابية", "إدارة المشروعات التقنية"],
@@ -114,6 +133,7 @@ export const services: {
   {
     icon: "network",
     title: "الشبكات والاتصالات",
+    image: img("1544197150-b99a580bb7a8"),
     en: "Networks & Communications",
     text: "توصيف وتصميم وتنفيذ وإدارة شبكات نقل وتداول البيانات، وخدمات الاتصالات والإنترنت.",
     points: ["تصميم وتنفيذ الشبكات", "أمن الشبكات", "خدمات الإنترنت"],
@@ -121,6 +141,7 @@ export const services: {
   {
     icon: "film",
     title: "المحتوى الرقمي والرقمنة",
+    image: img("1544383835-bda2bc66a55d"),
     en: "Digital Content & Digitization",
     text: "إنتاج المحتوى الإلكتروني صوتاً وصورةً وبيانات، وتحويل المحتوى التقليدي العلمي والثقافي والفني إلى محتوى رقمي.",
     points: ["إنتاج المحتوى الإلكتروني", "أرشفة ورقمنة الوثائق", "المكتبات الرقمية"],
@@ -128,6 +149,7 @@ export const services: {
   {
     icon: "keyboard",
     title: "إدخال البيانات والتعهيد",
+    image: img("1486312338219-ce68d2c6f44d"),
     en: "Data Entry & Outsourcing",
     text: "خدمات إدخال ومعالجة البيانات إلكترونياً وأنشطة التعهيد التقني بدقة وسرعة وسرية تامة.",
     points: ["إدخال ومعالجة البيانات", "تدقيق وتنظيف البيانات", "خدمات التعهيد"],
@@ -135,6 +157,7 @@ export const services: {
   {
     icon: "graduation",
     title: "التدريب والتعليم التكنولوجي",
+    image: img("1524178232363-1fb2b075b655"),
     en: "Training & Tech Education",
     text: "إنشاء وإدارة مراكز التدريب ونقل تكنولوجيا المعلومات، وبرامج تدريبية على النظم والتطبيقات.",
     points: ["برامج تدريب احترافية", "تدريب على الأنظمة المسلّمة", "مراكز نقل التكنولوجيا"],
@@ -142,35 +165,41 @@ export const services: {
 ];
 
 // مجالات أوسع: الاستشارات، البحث والتطوير، الابتكار وريادة الأعمال
-export const domains: { icon: IconName; title: string; text: string }[] = [
+export const domains: { icon: IconName; title: string; image: string; text: string }[] = [
   {
     icon: "briefcase",
     title: "الاستشارات والدراسات التقنية",
+    image: img("1454165804606-c3d57bc86b40"),
     text: "مراكز استشارات ودراسات متخصصة في مجالات المعلومات والاتصالات لدعم قرارات التحول الرقمي.",
   },
   {
     icon: "lightbulb",
     title: "البحث والتطوير",
+    image: img("1581091226825-a6a2a5aee158"),
     text: "مشروعات بحث وتطوير علمي موجهة للتنمية وتحويل الأفكار إلى منتجات تقنية حقيقية.",
   },
   {
     icon: "satellite",
     title: "علوم الفضاء والاستشعار عن بُعد",
+    image: img("1446776811953-b23d57bd21aa"),
     text: "دعم المشروعات المرتبطة بعلوم الفضاء والاستشعار عن بُعد وتقنيات التكنولوجيا الحديثة.",
   },
   {
     icon: "fileDigit",
     title: "الملكية الفكرية",
+    image: img("1581092160562-40aa08e78837"),
     text: "الاستثمار في تطوير براءات الاختراع والنماذج والرسوم الصناعية وحماية الابتكار.",
   },
   {
     icon: "rocket",
     title: "حاضنات الأعمال التكنولوجية",
+    image: img("1559136555-9303baea8ebd"),
     text: "احتضان الشركات الناشئة ودعم رواد الأعمال بالخبرة التقنية والإرشاد.",
   },
   {
     icon: "cloud",
     title: "صناعة تكنولوجيا المعلومات",
+    image: img("1550751827-4bd374c3f58b"),
     text: "المساهمة في صناعة تكنولوجيا المعلومات والاتصالات بأنشطتها الصناعية والبرمجية.",
   },
 ];

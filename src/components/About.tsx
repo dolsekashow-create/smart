@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Eye, Target } from "lucide-react";
-import { process, stats } from "@/data/site";
+import { images, process, stats } from "@/data/site";
 import { Counter } from "./Counter";
 import { LogoMark } from "./Logo";
 import { Reveal } from "./Reveal";
@@ -44,19 +45,40 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 to-navy-950 p-8 md:p-10">
-              <div className="bg-grid absolute inset-0 opacity-70" />
-              <LogoMark className="absolute -bottom-10 -start-10 h-56 w-auto opacity-[0.07]" />
-              <div className="relative grid grid-cols-2 gap-6">
-                {stats.map((s) => (
-                  <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur">
-                    <div className="font-display text-3xl font-extrabold text-white md:text-4xl" dir="ltr">
-                      <Counter to={s.value} />
-                      <span className="text-brand-400">{s.suffix}</span>
+            <div className="relative lg:ms-6">
+              <div className="relative h-[460px] overflow-hidden rounded-3xl shadow-2xl shadow-navy-900/20 md:h-[520px]">
+                <Image
+                  src={images.about}
+                  alt="فريق دلتا سمارت سيستم"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+                <LogoMark className="absolute top-5 start-5 h-10 w-auto drop-shadow-lg" />
+                <div className="absolute inset-x-4 bottom-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {stats.map((s) => (
+                    <div
+                      key={s.label}
+                      className="rounded-2xl border border-white/15 bg-navy-950/60 p-3 text-center backdrop-blur-md"
+                    >
+                      <div className="font-display text-2xl font-extrabold text-white" dir="ltr">
+                        <Counter to={s.value} />
+                        <span className="text-brand-400">{s.suffix}</span>
+                      </div>
+                      <p className="mt-1 text-xs text-slate-300">{s.label}</p>
                     </div>
-                    <p className="mt-2 text-sm text-slate-300">{s.label}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+              <div className="absolute -top-8 -end-4 hidden h-40 w-52 overflow-hidden rounded-2xl border-4 border-white shadow-xl md:block">
+                <Image
+                  src={images.aboutSecondary}
+                  alt="بيئة عمل تقنية"
+                  fill
+                  sizes="208px"
+                  className="object-cover"
+                />
               </div>
             </div>
           </Reveal>

@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react";
 import { ArrowLeft, Cloud, Code2, Database, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { images } from "@/data/site";
 import { HeroVisual } from "./HeroVisual";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -12,6 +14,16 @@ export function Hero() {
       id="home"
       className="relative overflow-hidden bg-navy-950 pt-28 pb-20 md:pt-36 md:pb-28"
     >
+      <Image
+        src={images.hero}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-35"
+      />
+      <div className="absolute inset-0 bg-gradient-to-l from-navy-950 via-navy-950/80 to-navy-950/40" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-950 to-transparent" />
       <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute -top-40 start-1/2 h-[520px] w-[520px] rounded-full bg-brand-600/25 blur-[140px]" />
       <div className="absolute bottom-0 end-0 h-[380px] w-[380px] rounded-full bg-brand-400/10 blur-[120px]" />

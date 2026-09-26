@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
-import { services, site } from "@/data/site";
+import { images, services, site } from "@/data/site";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const input =
@@ -46,8 +47,10 @@ export function Contact() {
 
         <div className="grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
-            <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-navy-800 to-navy-950 p-8 text-white">
-              <div className="bg-grid absolute inset-0 opacity-60" />
+            <div className="relative h-full overflow-hidden rounded-3xl bg-navy-950 p-8 text-white">
+              <Image src={images.contact} alt="" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-950/85 to-navy-950" />
+              <div className="bg-grid absolute inset-0 opacity-50" />
               <div className="relative">
                 <h3 className="text-xl font-bold">بيانات التواصل</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
