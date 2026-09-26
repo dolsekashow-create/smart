@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-cairo), system-ui, sans-serif;
+  --font-display: var(--font-montserrat), var(--font-cairo), sans-serif;
+
+  --color-navy-950: #030b1c;
+  --color-navy-900: #061430;
+  --color-navy-800: #0a1f45;
+  --color-navy-700: #12306a;
+
+  --color-brand-300: #7cc8ff;
+  --color-brand-400: #38aaff;
+  --color-brand-500: #1a8cff;
+  --color-brand-600: #0b6fe0;
+  --color-brand-700: #0a55b3;
+
+  --color-surface: #f4f7fc;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: #ffffff;
+  color: #0b1a33;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand-500);
+  color: white;
+}
+
+/* شبكة خفيفة للخلفيات الداكنة */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(56, 170, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 170, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-brand-400), var(--color-brand-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
