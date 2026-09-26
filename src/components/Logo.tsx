@@ -34,7 +34,7 @@ export function LogoMark({ className = "h-10 w-auto" }: { className?: string }) 
 
 export function Logo({ light = true }: { light?: boolean }) {
   return (
-    <span className="flex items-center gap-3" dir="ltr">
+    <span className="inline-flex items-center gap-3" dir="ltr">
       <LogoMark className="h-10 w-auto shrink-0" />
       <span className="flex flex-col leading-tight">
         <span

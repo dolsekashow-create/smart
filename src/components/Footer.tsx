@@ -1,3 +1,4 @@
+import { ArrowUpLeft } from "lucide-react";
 import { navLinks, services, site } from "@/data/site";
 import { Logo } from "./Logo";
 
@@ -63,9 +64,24 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs sm:flex-row md:px-6">
           <p>© {new Date().getFullYear()} {site.nameAr}. جميع الحقوق محفوظة.</p>
-          <p className="font-display" dir="ltr">
-            {site.nameEn} — {site.taglineEn}
-          </p>
+          <a
+            href="https://www.zero--nine.online/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-brand-400/50 hover:bg-brand-500/10"
+          >
+            <span>تم تطوير الموقع بواسطة</span>
+            <span
+              className="font-display font-bold tracking-wide text-white transition group-hover:text-brand-300"
+              dir="ltr"
+            >
+              Zero Nine
+            </span>
+            <ArrowUpLeft
+              size={14}
+              className="text-brand-400 transition group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </a>
         </div>
       </div>
     </footer>
