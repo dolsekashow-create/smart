@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Send, Smartphone } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { images, services, site } from "@/data/site";
 import { Reveal, SectionHeading } from "./Reveal";
@@ -32,7 +32,8 @@ export function Contact() {
 
   const info = [
     { Icon: MapPin, label: "العنوان", value: site.contact.address },
-    { Icon: Phone, label: "الهاتف", value: site.contact.phone, href: `tel:${site.contact.phone.replace(/\s/g, "")}`, ltr: true },
+    { Icon: Phone, label: "الهاتف", value: site.contact.phone, href: site.contact.phoneHref, ltr: true },
+    { Icon: Smartphone, label: "واتساب", value: site.contact.whatsappDisplay, href: `https://wa.me/${site.contact.whatsapp}`, ltr: true },
     { Icon: Mail, label: "البريد الإلكتروني", value: site.contact.email, href: `mailto:${site.contact.email}`, ltr: true },
   ];
 
@@ -65,7 +66,12 @@ export function Contact() {
                       <div>
                         <p className="text-xs text-slate-400">{label}</p>
                         {href ? (
-                          <a href={href} dir={ltr ? "ltr" : undefined} className="mt-0.5 block font-semibold hover:text-brand-300">
+                          <a
+                            href={href}
+                            dir={ltr ? "ltr" : undefined}
+                            {...(href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+                            className="mt-0.5 inline-block font-semibold hover:text-brand-300"
+                          >
                             {value}
                           </a>
                         ) : (

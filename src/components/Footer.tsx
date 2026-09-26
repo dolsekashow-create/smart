@@ -8,6 +8,32 @@ export function Footer() {
         <div className="lg:col-span-2">
           <Logo />
           <p className="mt-5 max-w-md text-sm leading-7">{site.description}</p>
+          <ul className="mt-5 space-y-2 text-sm">
+            <li>
+              الهاتف:{" "}
+              <a href={site.contact.phoneHref} dir="ltr" className="text-slate-200 hover:text-brand-300">
+                {site.contact.phone}
+              </a>
+            </li>
+            <li>
+              واتساب:{" "}
+              <a
+                href={`https://wa.me/${site.contact.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                dir="ltr"
+                className="text-slate-200 hover:text-brand-300"
+              >
+                {site.contact.whatsappDisplay}
+              </a>
+            </li>
+            <li>
+              البريد:{" "}
+              <a href={`mailto:${site.contact.email}`} className="text-slate-200 hover:text-brand-300">
+                {site.contact.email}
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
           <h3 className="mb-4 font-bold text-white">روابط سريعة</h3>

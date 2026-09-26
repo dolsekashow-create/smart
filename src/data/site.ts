@@ -12,10 +12,11 @@ export const site = {
   contact: {
     address:
       "محافظة الإسماعيلية – مركز التل الكبير – التل الكبير – شارع أحمد عرابي",
-    // TODO: حط بيانات التواصل الحقيقية
-    phone: "+20 100 000 0000",
-    email: "info@deltasmartsystem.com",
-    whatsapp: "201000000000",
+    phone: "064 3966710",
+    phoneHref: "tel:+20643966710",
+    email: "info@deltasmartsys.com",
+    whatsappDisplay: "0107 060 0071",
+    whatsapp: "201070600071", // بصيغة دولية لرابط wa.me
   },
 };
 
